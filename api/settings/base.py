@@ -100,3 +100,12 @@ AUTH_USER_MODEL = 'custom_user.CustomUser'
 CORS_ORIGIN_WHITELIST = (
     'localhost:8080',
 )
+
+
+STATIC_ROOT = 'static/'
+
+STATIC_URL = '/static/'
+
+MEDIA_ROOT = 'media/'
+
+MEDIA_URL = '/uploads/'
