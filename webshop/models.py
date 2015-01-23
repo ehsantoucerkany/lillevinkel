@@ -12,14 +12,14 @@ class Brand(models.Model):
 class Product(models.Model):
     name = models.CharField(blank=False, null=False, max_length=255)
     description = models.TextField(blank=False, null=False)
-    brand = models.ForeignKey(to=Brand, blank=False, null=False)
+    brand = models.ForeignKey(to=Brand, blank=False, null=False, related_name='products')
 
     def __unicode__(self):
         return smart_unicode("Product: " + self.name)
 
 
 class ProductVariant(models.Model):
-    product = models.ForeignKey(to=Product, blank=False, null=False)
+    product = models.ForeignKey(to=Product, blank=False, null=False, related_name='variants')
 
     price = models.FloatField(blank=False, null=False)
     color = models.CharField(blank=False, null=False, max_length=30)
