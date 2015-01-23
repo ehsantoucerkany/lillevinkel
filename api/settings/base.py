@@ -48,6 +48,7 @@ INSTALLED_APPS = (
     'rest_framework',
     'rest_framework.authtoken',
     'authemail',
+    'corsheaders',
 
     'custom_user',
     'webshop'
@@ -55,6 +56,7 @@ INSTALLED_APPS = (
 
 MIDDLEWARE_CLASSES = (
     'django.contrib.sessions.middleware.SessionMiddleware',
+    'corsheaders.middleware.CorsMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
@@ -100,7 +102,7 @@ AUTH_USER_MODEL = 'custom_user.CustomUser'
 CORS_ORIGIN_WHITELIST = (
     'localhost:8080',
 )
-
+CORS_ALLOW_CREDENTIALS = True
 
 STATIC_ROOT = 'static/'
 
