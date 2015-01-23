@@ -9,6 +9,7 @@ from webshop import views as webshop_views
 
 router = routers.DefaultRouter()
 router.register(r'products', webshop_views.ProductViewSet)
+router.register(r'brands', webshop_views.BrandViewSet)
 
 urlpatterns = patterns(
     '',
