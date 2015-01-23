@@ -5,5 +5,4 @@ venv/*
 local.py
 *.db
 static/css/
-media/
 db.sqlite3

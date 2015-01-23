@@ -16,6 +16,8 @@ class ProductVariantSerializer(serializers.ModelSerializer):
             'quantity'
         ]
 
+    def get_image(self, product_variant):
+        return self.context['request'].build_absolute_uri(product_variant.image)
 
 class ProductListSerializer(serializers.ModelSerializer):
     variants = ProductVariantSerializer(many=True)
