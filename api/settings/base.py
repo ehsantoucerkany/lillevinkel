@@ -49,7 +49,8 @@ INSTALLED_APPS = (
     'rest_framework.authtoken',
     'authemail',
 
-    'custom_user'
+    'custom_user',
+    'webshop'
 )
 
 MIDDLEWARE_CLASSES = (
