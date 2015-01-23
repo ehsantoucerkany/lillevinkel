@@ -22,6 +22,7 @@ class ProductVariant(models.Model):
     product = models.ForeignKey(to=Product, blank=False, null=False)
 
     price = models.FloatField(blank=False, null=False)
+    color = models.CharField(blank=False, null=False, max_length=30)
     size = models.FloatField(blank=False, null=False)
     quantity = models.IntegerField(blank=False, null=False)
 
