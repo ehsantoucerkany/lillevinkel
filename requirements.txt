@@ -1,3 +1,4 @@
 django==1.7.3
 djangorestframework==3.0.3
 django-cors-headers==1.0.0
+django-rest-authemail==0.1.4

@@ -10,7 +10,7 @@ https://docs.djangoproject.com/en/1.7/ref/settings/
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 import os
-BASE_DIR = os.path.dirname(os.path.dirname(__file__))
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.dirname(__file__)))
 
 # Database
 # https://docs.djangoproject.com/en/1.7/ref/settings/#databases
@@ -45,7 +45,11 @@ INSTALLED_APPS = (
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'rest_framework'
+    'rest_framework',
+    'rest_framework.authtoken',
+    'authemail',
+
+    'custom_user'
 )
 
 MIDDLEWARE_CLASSES = (
@@ -83,5 +87,15 @@ STATIC_URL = '/static/'
 
 REST_FRAMEWORK = {
     'DEFAULT_PERMISSION_CLASSES': ('rest_framework.permissions.AllowAny',),
+    'DEFAULT_AUTHENTICATION_CLASSES': (
+        'rest_framework.authentication.TokenAuthentication',
+        'rest_framework.authentication.SessionAuthentication',
+    ),
     'PAGINATE_BY': 50
 }
+
+AUTH_USER_MODEL = 'custom_user.CustomUser'
+
+CORS_ORIGIN_WHITELIST = (
+    'localhost:8080',
+)

@@ -8,4 +8,5 @@ urlpatterns = patterns(
     '',
     url(r'^', include(router.urls)),
     url(r'^admin/', include(admin.site.urls)),
+    url(r'^accounts/', include('authemail.urls')),
 )
